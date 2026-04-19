@@ -1,0 +1,9 @@
+{
+  "name": "JetpackSafety",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/PixelIndieDev/JetpackSafety",
+  "description": "A simple mod that removes the damage players can receive when using the jetpack",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2305"
+  ]
+}
