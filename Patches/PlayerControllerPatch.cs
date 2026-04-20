@@ -8,6 +8,7 @@ namespace JetpackSafety.Patches
     {
         [HarmonyPatch("KillPlayer")]
         [HarmonyPrefix]
+        [HarmonyPriority(Priority.Last)]
         static bool PreventDeath(PlayerControllerB __instance, CauseOfDeath causeOfDeath)
         {
             if (causeOfDeath == CauseOfDeath.Gravity && IsUsingJetpack(__instance))
@@ -19,6 +20,7 @@ namespace JetpackSafety.Patches
 
         [HarmonyPatch(typeof(PlayerControllerB), "DamagePlayer")]
         [HarmonyPrefix]
+        [HarmonyPriority(Priority.Last)]
         static bool PreventDamage(PlayerControllerB __instance, CauseOfDeath causeOfDeath)
         {
             if (causeOfDeath == CauseOfDeath.Gravity && IsUsingJetpack(__instance)) {

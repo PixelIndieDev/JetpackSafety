@@ -26,3 +26,4 @@ No configuration needed.
 Works for V81
 
 This mod should work alongside most other mods.
+> Note: The removal of the warning beeps may be overridden by other jetpack related mods

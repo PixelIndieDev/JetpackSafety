@@ -8,6 +8,7 @@ namespace JetpackSafety.Patches
     {
         [HarmonyPatch("ExplodeJetpackServerRpc")]
         [HarmonyPrefix]
+        [HarmonyPriority(Priority.Last)] //priority above other mods
         static bool PreventExplosionsOnServer()
         {
             return false;
@@ -15,6 +16,7 @@ namespace JetpackSafety.Patches
 
         [HarmonyPatch("ExplodeJetpackClientRpc")]
         [HarmonyPrefix]
+        [HarmonyPriority(Priority.Last)]
         static bool PreventExplosionsOnClient()
         {
             return false;
@@ -22,6 +24,7 @@ namespace JetpackSafety.Patches
 
         [HarmonyPatch("SetJetpackAudios")]
         [HarmonyPostfix]
+        [HarmonyPriority(Priority.First)]
         static void PreventBeeps(JetpackItem __instance, ref bool ___jetpackPlayingWarningBeep, AudioSource ___jetpackBeepsAudio)
         {
             if (___jetpackPlayingWarningBeep)
